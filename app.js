@@ -30,5 +30,37 @@ const vue_app = Vue.createApp({
   }
 })
 
+// create an app to control part of the webpage
+const conditional_vue_app = Vue.createApp({
+  data() {
+    return{
+      showSong: true,
+      song_title: 'Yellow Submarine',
+      song_band: 'The Beatles',
+      x: 0,
+      y: 0
+    }
+  },
+  methods: {
+    toggleShowSong() {
+      // ! acts as a NOT statement
+      this.showSong = !this.showSong 
+    },
+    handleEvent(e, data) {
+      console.log(e, e.type)
+      // check if data has a value and only log to console if it does
+      // this makes this function universal for all cases regardless of whether data is supplied
+      if (data) {
+        console.log(data)
+      }
+    },
+    handleMousemove(e) {
+      this.x = e.offsetX
+      this.y = e.offsetY
+    }
+  }
+})
+
 // mount the app where you find the element with the id #vue_anchor
 vue_app.mount('#vue_anchor')
+conditional_vue_app.mount('#cond_vue_anchor')

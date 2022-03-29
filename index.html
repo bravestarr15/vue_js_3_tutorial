@@ -5,6 +5,17 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learning Vue</title>
   <script src="https://unpkg.com/vue@3.0.2"></script>
+  <!-- define style for boxes used in mouse events -->
+  <style>
+    .box {
+      padding: 100px 0;
+      width: 400px;
+      text-align: center;
+      background: #ddd;
+      margin: 20px;
+      display: inline-block;
+    }
+  </style>
 </head>
 <body>
   <h1>Hello Vue :)</h1>
@@ -27,6 +38,39 @@
     <div @click="changeObjTitle">Make new title [alt]</div>
     <br>
     <div @click="changeObjTitleInput('newer title')">Make newer title</div>
+  </div>
+
+  <div id="cond_vue_anchor">
+    <div v-if="false">
+      <p> boom!! there it ain't</p>
+    </div>
+    <div v-if="true">
+      <p> boom!! there it is</p>
+    </div>
+    <div v-if="showSong">
+      <p>{{ song_title }} - {{ song_band }}</p>
+    </div>
+
+    <button @click="toggleShowSong">
+      <span v-if="showSong">Hide Favourite Song</span>
+      <!-- either use NOT exclamation.... -->
+<!--      <span v-if="!showSong">Show Favourite Song</span>    -->
+      <!-- ....or use and else -->
+      <span v-else>Show Favourite Song</span>
+    </button>
+
+    <!-- NOTE: v-if removes the content from the hyml, which can be time consuming -->
+    <!-- so, if it won't need to update very often in a session it's fine -->
+    <!-- for things we want to show and hide frequently use a v-show -->
+    <!-- which updates the css display setting -->
+
+    <div v-show="showSong">I love showing my favourite song</div>
+
+    <!-- mouse events -->
+    <div class="box" @mouseover="handleEvent($event, 5)">mouseover</div>
+    <div class="box" @mouseleave="handleEvent">mouseleave</div>
+    <div class="box" @dblclick="handleEvent">doule click</div>
+    <div class="box" @mousemove="handleMousemove">position - {{ x }} {{ y }}</div>
   </div>
 
   <script src="app.js"></script>

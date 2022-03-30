@@ -72,6 +72,24 @@
     <div class="box" @dblclick="handleEvent">doule click</div>
     <div class="box" @mousemove="handleMousemove">position - {{ x }} {{ y }}</div>
   </div>
+  
+  <div id="vue_loops_anchor">
+    <div v-if="showBooks">
+      <ul>
+        <li v-for="bk in books_array">
+          <h3>{{ bk.title }}</h3>
+          <!-- note that : in front of alt is short hand for v-bind: -->
+          <img :src="bk.cover_img" :alt="bk.title">
+          <p>{{ bk.author }}</p>
+        </li>
+      </ul>
+    </div>
+
+    <button @click="toggleShowBooks">
+      <span v-if="showBooks">Hide Book List</span>
+      <span v-else>Show Book List</span>
+    </button>
+  </div>
 
   <script src="app.js"></script>
 </body>

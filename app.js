@@ -30,5 +30,58 @@ const vue_app = Vue.createApp({
   }
 })
 
+// create an app to control part of the webpage
+const conditional_vue_app = Vue.createApp({
+  data() {
+    return{
+      showSong: true,
+      song_title: 'Yellow Submarine',
+      song_band: 'The Beatles',
+      x: 0,
+      y: 0
+    }
+  },
+  methods: {
+    toggleShowSong() {
+      // ! acts as a NOT statement
+      this.showSong = !this.showSong 
+    },
+    handleEvent(e, data) {
+      console.log(e, e.type)
+      // check if data has a value and only log to console if it does
+      // this makes this function universal for all cases regardless of whether data is supplied
+      if (data) {
+        console.log(data)
+      }
+    },
+    handleMousemove(e) {
+      this.x = e.offsetX
+      this.y = e.offsetY
+    }
+  }
+})
+
+const for_loop_app = Vue.createApp({
+  data() {
+    return {
+      showBooks: true,
+      books_array: [
+        { title: 'name of the wind', author: 'patrick rothfuss', cover_img: 'assets/1.jpg' },
+        { title: 'the way of kings', author: 'brandon sanderson', cover_img: 'assets/2.jpg' },
+        { title: 'the final empire', author: 'jim kelly', cover_img: 'assets/3.jpg' },
+      ]
+    }
+  },
+  methods: {
+    toggleShowBooks() {
+      // ! acts as a NOT statement
+      this.showBooks = !this.showBooks 
+    }
+  }
+})
+
 // mount the app where you find the element with the id #vue_anchor
 vue_app.mount('#vue_anchor')
+conditional_vue_app.mount('#cond_vue_anchor')
+for_loop_app.mount('#vue_loops_anchor')
+

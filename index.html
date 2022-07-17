@@ -7,6 +7,29 @@
   <script src="https://unpkg.com/vue@3.0.2"></script>
   <!-- define style for boxes used in mouse events -->
   <style>
+    body {
+      background: #eee;
+      max-width: 960px;
+      margin: 20px auto;
+    }
+    p, h3, ul {
+      margin: 0;
+      padding: 0;
+    }
+    li {
+      list-style-type: none;
+      background: #fff;
+      margin: 20px auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+      display: flex; /* following two require display flex */ 
+      align-items: center; /* vertically aligned */
+      justify-content: space-between; /* equal space horizontally between each item */
+    }
+    li.fav {
+      background: #ff9ed2;
+      color: white;
+    }
     .box {
       padding: 100px 0;
       width: 400px;
@@ -76,7 +99,7 @@
   <div id="vue_loops_anchor">
     <div v-if="showBooks">
       <ul>
-        <li v-for="bk in books_array">
+        <li v-for="bk in books_array" :class="{ fav: bk.isFav}" @click="toggleFav(bk)">
           <h3>{{ bk.title }}</h3>
           <!-- note that : in front of alt is short hand for v-bind: -->
           <img :src="bk.cover_img" :alt="bk.title">
@@ -89,6 +112,20 @@
       <span v-if="showBooks">Hide Book List</span>
       <span v-else>Show Book List</span>
     </button>
+
+    <div>
+    <h3>Filtered list of favourite books:</h3>
+
+    <ul>
+      <li v-for="bk in filteredBooks">
+        <h3>{{ bk.title }}</h3>
+        <!-- note that : in front of alt is short hand for v-bind: -->
+        <img :src="bk.cover_img" :alt="bk.title">
+        <p>{{ bk.author }}</p>
+      </li>
+    </ul>
+
+    </div>
   </div>
 
   <script src="app.js"></script>

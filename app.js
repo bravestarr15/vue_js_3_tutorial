@@ -66,9 +66,9 @@ const for_loop_app = Vue.createApp({
     return {
       showBooks: true,
       books_array: [
-        { title: 'name of the wind', author: 'patrick rothfuss', cover_img: 'assets/1.jpg' },
-        { title: 'the way of kings', author: 'brandon sanderson', cover_img: 'assets/2.jpg' },
-        { title: 'the final empire', author: 'jim kelly', cover_img: 'assets/3.jpg' },
+        { title: 'name of the wind', author: 'patrick rothfuss', cover_img: 'assets/1.jpg', isFav: true },
+        { title: 'the way of kings', author: 'brandon sanderson', cover_img: 'assets/2.jpg', isFav: false },
+        { title: 'the final empire', author: 'jim kelly', cover_img: 'assets/3.jpg', isFav: true },
       ]
     }
   },
@@ -76,6 +76,14 @@ const for_loop_app = Vue.createApp({
     toggleShowBooks() {
       // ! acts as a NOT statement
       this.showBooks = !this.showBooks 
+    },
+    toggleFav(liBook) {
+      liBook.isFav = !liBook.isFav
+    }
+  },
+  computed: {
+    filteredBooks() {
+      return this.books_array.filter((liBook) => liBook.isFav)
     }
   }
 })

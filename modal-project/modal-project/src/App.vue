@@ -1,12 +1,17 @@
 <template>
   <h1>{{ title }}</h1>
-  <input type="text" ref="input_text_name">
-  <button @click="handleClick">click me</button>
+  <div>
+    <input type="text" ref="input_text_name">
+    <button @click="handleClick">click me</button>
+  </div>
+  <Modal />
 </template>
 
 <script>
+import Modal from './components/Modal.vue'
 export default {
   name: 'App',
+  components: { Modal },
   data() {
     return {
       title: 'My First Vue App :)'

@@ -4,7 +4,7 @@
     <input type="text" ref="input_text_name">
     <button @click="handleClick">click me</button>
   </div>
-  <Modal modal_header="Sign up for the Giveaway!" modal_text="Grab your ninja swag for half price!" />
+  <Modal :modal_header="modal_header" :modal_text="modal_text" modal_theme="sale" />
 </template>
 
 <script>
@@ -14,7 +14,9 @@ export default {
   components: { Modal },
   data() {
     return {
-      title: 'My First Vue App :)'
+      title: 'My First Vue App :)',
+      modal_header: 'Sign up for the Giveaway!',
+      modal_text: 'Grab your ninja swag for half price!'
     }
   },
   methods: {

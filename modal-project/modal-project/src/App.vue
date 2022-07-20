@@ -4,7 +4,7 @@
     <input type="text" ref="input_text_name">
     <button @click="handleClick">click me</button>
   </div>
-  <Modal />
+  <Modal modal_header="Sign up for the Giveaway!" modal_text="Grab your ninja swag for half price!" />
 </template>
 
 <script>

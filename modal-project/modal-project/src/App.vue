@@ -7,6 +7,10 @@
   </div>
   <div v-if="showModal">
     <Modal modal_theme="sale" @close_me="toggleModal">
+      <template v-slot:links>
+        <a href="#">sign up now</a>
+        <a href="#">more info</a>
+      </template>
       <h1>Ninja Giveaway!</h1>
       <p>Grab your ninja swag for half price!</p>
     </Modal>

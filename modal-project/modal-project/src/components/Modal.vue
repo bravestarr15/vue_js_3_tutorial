@@ -1,6 +1,7 @@
 <template>
   <div class="backdrop">
     <div class="modal">
+      <h1>Modal title</h1>
       <p>modal content</p>
     </div>
   </div>

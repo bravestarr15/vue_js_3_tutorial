@@ -6,7 +6,7 @@
   </div>
 </template>
 
-<style>
+<style scoped>
   .modal {
     width: 400px;
     padding: 20px;

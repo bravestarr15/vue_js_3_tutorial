@@ -6,7 +6,7 @@
     <button @click="handleClick">click me</button>
   </div>
   <div v-if="showModal">
-    <Modal :modal_header="modal_header" :modal_text="modal_text" modal_theme="sale" />
+    <Modal :modal_header="modal_header" :modal_text="modal_text" modal_theme="sale" @close_me="toggleModal" />
   </div>
   <div>
     <button @click="toggleModal">open modal</button>

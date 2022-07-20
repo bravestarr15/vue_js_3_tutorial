@@ -6,7 +6,10 @@
     <button @click="handleClick">click me</button>
   </div>
   <div v-if="showModal">
-    <Modal :modal_header="modal_header" :modal_text="modal_text" modal_theme="sale" @close_me="toggleModal" />
+    <Modal modal_theme="sale" @close_me="toggleModal">
+      <h1>Ninja Giveaway!</h1>
+      <p>Grab your ninja swag for half price!</p>
+    </Modal>
   </div>
   <div>
     <button @click="toggleModal">open modal</button>
@@ -21,8 +24,6 @@ export default {
   data() {
     return {
       title: 'My First Vue App :)',
-      modal_header: 'Sign up for the Giveaway!',
-      modal_text: 'Grab your ninja swag for half price!',
       showModal: false
     }
   },

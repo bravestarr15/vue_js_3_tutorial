@@ -9,7 +9,7 @@
     <p><button @click="toggleModal">open modal</button></p>
     <p><button @click.alt="toggleModalTwo">open modal two (alt + click)</button></p>
   </div>
-  <div v-if="showModal">
+  <teleport to="#modals" v-if="showModal">
     <Modal modal_theme="sale" @close_me="toggleModal">
       <template v-slot:links>
         <a href="#">sign up now</a>
@@ -18,13 +18,13 @@
       <h1>Ninja Giveaway!</h1>
       <p>Grab your ninja swag for half price!</p>
     </Modal>
-  </div>
-  <div v-if="showModalTwo">
+  </teleport>
+  <teleport to="#modals" v-if="showModalTwo">
     <Modal @close_me="toggleModalTwo">
       <h1>Ninja Time!</h1>
       <p>Check out this second modal!!</p>
     </Modal>
-  </div>
+  </teleport>
 </template>
 
 <script>
@@ -56,7 +56,7 @@ export default {
 </script>
 
 <style>
-#app {
+#app, #modals {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

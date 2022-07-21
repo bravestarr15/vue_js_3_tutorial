@@ -5,6 +5,10 @@
     <input type="text" ref="input_text_name">
     <button @click="handleClick">click me</button>
   </div>
+  <div>
+    <p><button @click="toggleModal">open modal</button></p>
+    <p><button @click.alt="toggleModalTwo">open modal two (alt + click)</button></p>
+  </div>
   <div v-if="showModal">
     <Modal modal_theme="sale" @close_me="toggleModal">
       <template v-slot:links>
@@ -15,8 +19,11 @@
       <p>Grab your ninja swag for half price!</p>
     </Modal>
   </div>
-  <div>
-    <button @click="toggleModal">open modal</button>
+  <div v-if="showModalTwo">
+    <Modal @close_me="toggleModalTwo">
+      <h1>Ninja Time!</h1>
+      <p>Check out this second modal!!</p>
+    </Modal>
   </div>
 </template>
 
@@ -28,7 +35,8 @@ export default {
   data() {
     return {
       title: 'My First Vue App :)',
-      showModal: false
+      showModal: false,
+      showModalTwo: false
     }
   },
   methods: {
@@ -39,6 +47,9 @@ export default {
     },
     toggleModal() {
      this.showModal = !this.showModal 
+    },
+    toggleModalTwo() {
+     this.showModalTwo = !this.showModalTwo 
     }
   }
 }

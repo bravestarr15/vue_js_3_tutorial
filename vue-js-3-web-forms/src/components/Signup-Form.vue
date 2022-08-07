@@ -13,11 +13,17 @@
       <option value="dsgn">Web Designer</option>
     </select>
 
+    <div class="terms">
+      <input type="checkbox" v-model="chkTerms" required>
+      <label>Accept terms and conditions</label>
+    </div>
+
   </form>
 
   <p>Email: {{ email }} </p>
   <p>Password: {{ pwd }} </p>
   <p>Role: {{ jobRole }} </p>
+  <p>Terms accepted: {{ chkTerms }} </p>
 
 </template>
 
@@ -27,7 +33,8 @@ export default {
     return {
       email: '',
       pwd: '',
-      jobRole: ''  /* populate to set default */
+      jobRole: '',  /* populate to set default */
+      chkTerms: false
     }
   }
 }
@@ -59,5 +66,12 @@ input, select {
   border: none;
   border-bottom: 1px solid #ddd;
   color: #555;
+}
+input[type="checkbox"] {
+  display: inline-block;
+  width: 16px;
+  margin: 0 10px 0 0;
+  position: relative;
+  top: 2px;
 }
 </style>

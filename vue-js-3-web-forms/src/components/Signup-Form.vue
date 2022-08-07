@@ -6,10 +6,18 @@
 
     <label>Password:</label>
     <input type="password" required v-model="pwd"> 
+
+    <label>Role:</label>
+    <select v-model="jobRole">
+      <option value="dvlp">Web Developer</option>
+      <option value="dsgn">Web Designer</option>
+    </select>
+
   </form>
 
-  <p>Email: {{ email }}</p>
-  <p>Password: {{ pwd }}</p>
+  <p>Email: {{ email }} </p>
+  <p>Password: {{ pwd }} </p>
+  <p>Role: {{ jobRole }} </p>
 
 </template>
 
@@ -18,7 +26,8 @@ export default {
   data() {
     return {
       email: '',
-      pwd: ''
+      pwd: '',
+      jobRole: ''  /* populate to set default */
     }
   }
 }
@@ -42,7 +51,7 @@ label {
   letter-spacing: 1px;
   font-weight: bold;
 }
-input {
+input, select {
   display: block;
   padding: 10px 6px;
   width: 100%;

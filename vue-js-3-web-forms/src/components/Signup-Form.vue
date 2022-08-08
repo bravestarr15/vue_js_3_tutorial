@@ -18,12 +18,26 @@
       <label>Accept terms and conditions</label>
     </div>
 
+    <div>
+      <input type="checkbox" value="Mario" v-model="names">
+      <label>Mario</label>
+    </div>
+    <div>
+      <input type="checkbox" value="Yoshi" v-model="names">
+      <label>Yoshi</label>
+    </div>
+    <div>
+      <input type="checkbox" value="Luigi" v-model="names">
+      <label>Luigi</label>
+    </div>
+
   </form>
 
-  <p>Email: {{ email }} </p>
-  <p>Password: {{ pwd }} </p>
-  <p>Role: {{ jobRole }} </p>
-  <p>Terms accepted: {{ chkTerms }} </p>
+  <p> Email: {{ email }} </p>
+  <p> Password: {{ pwd }} </p>
+  <p> Role: {{ jobRole }} </p>
+  <p> Terms accepted: {{ chkTerms }} </p>
+  <p> Names: {{ names }} </p>
 
 </template>
 
@@ -34,7 +48,8 @@ export default {
       email: '',
       pwd: '',
       jobRole: '',  /* populate to set default */
-      chkTerms: false
+      chkTerms: false,
+      names: []
     }
   }
 }

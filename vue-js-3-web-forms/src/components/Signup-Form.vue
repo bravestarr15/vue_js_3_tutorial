@@ -13,6 +13,9 @@
       <option value="dsgn">Web Designer</option>
     </select>
 
+    <label>Skills:</label>
+    <input type="text" v-model="tempSkill">
+
     <div class="terms">
       <input type="checkbox" v-model="chkTerms" required>
       <label>Accept terms and conditions</label>
@@ -52,6 +55,8 @@ export default {
       jobRole: '',  /* populate to set default */
       chkTerms: false,
 /*      names: []  */
+      tempSkill: '',
+      skills: []
     }
   }
 }

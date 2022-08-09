@@ -8,10 +8,24 @@
       <router-link v-bind:to="{ name: 'jobs' }">Jobs</router-link>
     </nav>
 
+    <button @click="goRedirect">Redirect</button>
+    <button @click="goBack">Go Back</button>
+    <button @click="goForward">Go Forward</button>
+
     <router-view />
   
   </dir>
 </template>
+
+<script>
+export default {
+  methods: {
+    goRedirect() {},
+    goBack() {},
+    goForward() {}
+  },
+}
+</script>
 
 <style>
 #app {
@@ -21,11 +35,9 @@
   text-align: center;
   color: #2c3e50;
 }
-
 nav {
   padding: 30px;
 }
-
 nav a {
   font-weight: bold;
   color: #2c3e50;
@@ -33,9 +45,14 @@ nav a {
   padding: 10px;
   border-radius: 4px;
 }
-
 nav a.router-link-exact-active {
   color: white;
   background: crimson;
+}
+button {
+  margin: 0 10px;
+  padding: 10px;
+  border: none;
+  border-radius: 4px;
 }
 </style>

@@ -4,7 +4,7 @@
 
     <h1>Jobs</h1>  
 
-    <div v-for="eachJob in jobs" v-bind:key="eachJob.id">
+    <div v-for="eachJob in jobs" v-bind:key="eachJob.id" class="job">
       <router-link v-bind:to="{ name: 'jobDetails', params: { job_id: eachJob.id }}">
         <h2>{{ eachJob.title }}</h2>
       </router-link>
@@ -29,5 +29,19 @@ export default {
 </script>
 
 <style>
-
+.job h2 {
+  background: #f4f4f4;
+  padding: 20px;
+  border-radius: 10px;
+  margin: 10px auto;
+  max-width: 600px;
+  cursor: pointer;
+  color: #444;
+}
+.job h2:hover {
+  background: #ddd;
+}
+.job a {
+  text-decoration: none;
+}
 </style>

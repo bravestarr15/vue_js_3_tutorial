@@ -9,6 +9,8 @@
 
       <label>Password:</label>
       <input type="password" required v-model="pwd"> 
+      <div v-if="passwordError" class="error">{{ passwordError }}</div> 
+      <!-- FALSE if passwordError is empty string -->
 
       <label>Role:</label>
       <select v-model="jobRole">
@@ -72,7 +74,8 @@ export default {
       chkTerms: false,
 /*      names: []  */
       tempSkill: '',
-      skills: []
+      skills: [],
+      passwordError: ''
     }
   },
   methods: {
@@ -99,8 +102,21 @@ export default {
 */
     },
     handleSubmit() {
-      console.log('form submitted')
+/*      console.log('form submitted')  */
       /* normally, here, you'd validate the entered info and submit to database */
+
+      /* validate password */
+      /* between '?' and ':' is IF TRUE to the right of the ':' is IF FALSE */
+      this.passwordError = this.pwd.length > 5 ?
+        '' : 'Password must be at least 6 chars long'
+
+      if(!this.passwordError) {
+        console.log('email: ', this.email)
+        console.log('password: ', this.pwd)
+        console.log('role: ', this.jobRole)
+        console.log('skills: ', this.skills)
+        console.log('terms accepted: ', this.chkTerms)
+      }
     }
   }
 }
@@ -162,5 +178,11 @@ button {
 }
 .submit {
   text-align: center;
+}
+.error {
+  color: #ff0062;
+  margin-top: 10px;
+  font-size: 0.8em;
+  font-weight: bold;
 }
 </style>

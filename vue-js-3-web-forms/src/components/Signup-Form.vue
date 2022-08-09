@@ -21,7 +21,7 @@
       <!-- .alt means that when holding down the alt the other key is not recorded in the text,
           hence now ALT + , saves the skill WITHOUT a comma being saved -->
       <div v-for="thisSkill in skills" v-bind:key="thisSkill" class="pill"> <!-- loop through skills requires key/unique field -->
-        {{ thisSkill }}
+        <span @click="deleteSkill(thisSkill)">{{ thisSkill }}</span>
       </div>
 
       <div class="terms">
@@ -80,6 +80,17 @@ export default {
         }
         this.tempSkill = ''
       }
+    },
+    deleteSkill(thatSkill) {
+/*      console.log(thatSkill)  */
+/*      console.log(this.skills.indexOf(thatSkill))  */
+      this.skills.splice(this.skills.indexOf(thatSkill), 1)
+/* alternate approach */
+/*
+      this.skills = this.skills.filter((item) => {
+        return thatSkill !== item
+      })
+*/
     }
   }
 }

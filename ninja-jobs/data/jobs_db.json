@@ -1,8 +1,12 @@
-/* npm install json-server */
 {
   "jobs": [
-    { "title": "Ninja UX Designer",   "id": 1, "details": "lorem a" },
+    { "title": "Ninja UX Designer", "id": 1, "details": "lorem a" },
     { "title": "Ninja Web Developer", "id": 2, "details": "lorem b" },
     { "title": "Ninja Vue Developer", "id": 3, "details": "lorem c" }
+  ],
+  "notes": [
+    { "content": "to execute in terminal", "id": 1 },
+    { "content": "npm install -g json-server", "id": 2 },
+    { "content": "json-server --watch data/jobs_db.json", "id": 3 }
   ]
 }

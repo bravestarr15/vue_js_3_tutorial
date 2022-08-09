@@ -1,54 +1,58 @@
 <template>
 
-  <form>
-    <label>Email:</label>
-    <input type="email" required v-model="email"> 
+  <div> 
 
-    <label>Password:</label>
-    <input type="password" required v-model="pwd"> 
+    <form>
+      <label>Email:</label>
+      <input type="email" required v-model="email"> 
 
-    <label>Role:</label>
-    <select v-model="jobRole">
-      <option value="dvlp">Web Developer</option>
-      <option value="dsgn">Web Designer</option>
-    </select>
+      <label>Password:</label>
+      <input type="password" required v-model="pwd"> 
 
-    <label>Skills:</label>
-    <input type="text" v-model="tempSkill" @keyup.alt="addSkill"> 
-    <!-- keyup means 'whenever a key is pressed' -->
-    <!-- .alt means that when holding down the alt the other key is not recorded in the text,
-         hence now ALT + , saves the skill WITHOUT a comma being saved -->
-    <div v-for="thisSkill in skills" v-bind:key="thisSkill" class="pill"> <!-- loop through skills requires key/unique field -->
-      {{ thisSkill }}
-    </div>
+      <label>Role:</label>
+      <select v-model="jobRole">
+        <option value="dvlp">Web Developer</option>
+        <option value="dsgn">Web Designer</option>
+      </select>
 
-    <div class="terms">
-      <input type="checkbox" v-model="chkTerms" required>
-      <label>Accept terms and conditions</label>
-    </div>
+      <label>Skills:</label>
+      <input type="text" v-model="tempSkill" @keyup.alt="addSkill"> 
+      <!-- keyup means 'whenever a key is pressed' -->
+      <!-- .alt means that when holding down the alt the other key is not recorded in the text,
+          hence now ALT + , saves the skill WITHOUT a comma being saved -->
+      <div v-for="thisSkill in skills" v-bind:key="thisSkill" class="pill"> <!-- loop through skills requires key/unique field -->
+        {{ thisSkill }}
+      </div>
 
-<!--
-    <div>
-      <input type="checkbox" value="Mario" v-model="names">
-      <label>Mario</label>
-    </div>
-    <div>
-      <input type="checkbox" value="Yoshi" v-model="names">
-      <label>Yoshi</label>
-    </div>
-    <div>
-      <input type="checkbox" value="Luigi" v-model="names">
-      <label>Luigi</label>
-    </div>
--->
+      <div class="terms">
+        <input type="checkbox" v-model="chkTerms" required>
+        <label>Accept terms and conditions</label>
+      </div>
 
-  </form>
+  <!--
+      <div>
+        <input type="checkbox" value="Mario" v-model="names">
+        <label>Mario</label>
+      </div>
+      <div>
+        <input type="checkbox" value="Yoshi" v-model="names">
+        <label>Yoshi</label>
+      </div>
+      <div>
+        <input type="checkbox" value="Luigi" v-model="names">
+        <label>Luigi</label>
+      </div>
+  -->
 
-  <p> Email: {{ email }} </p>
-  <p> Password: {{ pwd }} </p>
-  <p> Role: {{ jobRole }} </p>
-  <p> Terms accepted: {{ chkTerms }} </p>
-<!--  <p> Names: {{ names }} </p>  -->
+    </form>
+
+    <p> Email: {{ email }} </p>
+    <p> Password: {{ pwd }} </p>
+    <p> Role: {{ jobRole }} </p>
+    <p> Terms accepted: {{ chkTerms }} </p>
+  <!--  <p> Names: {{ names }} </p>  -->
+
+  </div>
 
 </template>
 

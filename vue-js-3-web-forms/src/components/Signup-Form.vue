@@ -15,6 +15,9 @@
 
     <label>Skills:</label>
     <input type="text" v-model="tempSkill" @keyup="addSkill"> <!-- keyup means 'whenever a key is pressed' -->
+    <div v-for="thisSkill in skills" v-bind:key="thisSkill" class="pill"> <!-- loop through skills requires key/unique field -->
+      {{ thisSkill }}
+    </div>
 
     <div class="terms">
       <input type="checkbox" v-model="chkTerms" required>
@@ -61,7 +64,7 @@ export default {
   },
   methods: {
     addSkill(e) {
-      console.log(e)
+/*      console.log(e)  */
       if (e.key === ',' && this.tempSkill) {  /* and tempSkill is not empty */
         this.skills.push(this.tempSkill)
         this.tempSkill = ''

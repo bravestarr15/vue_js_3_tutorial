@@ -14,7 +14,7 @@
     </select>
 
     <label>Skills:</label>
-    <input type="text" v-model="tempSkill">
+    <input type="text" v-model="tempSkill" @keyup="addSkill"> <!-- keyup means 'whenever a key is pressed' -->
 
     <div class="terms">
       <input type="checkbox" v-model="chkTerms" required>
@@ -57,6 +57,11 @@ export default {
 /*      names: []  */
       tempSkill: '',
       skills: []
+    }
+  },
+  methods: {
+    addSkill(e) {
+      console.log(e)
     }
   }
 }

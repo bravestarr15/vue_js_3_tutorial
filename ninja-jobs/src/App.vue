@@ -1,11 +1,16 @@
 <template>
-  <nav>
-    <!--  bind to names defined in router/index.js  -->
-    <router-link v-bind:to="{ name: 'home' }">Home</router-link> 
-    <router-link v-bind:to="{ name: 'about' }">About</router-link>
-    <router-link v-bind:to="{ name: 'jobs' }">Jobs</router-link>
-  </nav>
-  <router-view />
+  <dir>
+
+    <nav>
+      <!--  bind to names defined in router/index.js  -->
+      <router-link v-bind:to="{ name: 'home' }">Home</router-link> 
+      <router-link v-bind:to="{ name: 'about' }">About</router-link>
+      <router-link v-bind:to="{ name: 'jobs' }">Jobs</router-link>
+    </nav>
+
+    <router-view />
+  
+  </dir>
 </template>
 
 <style>

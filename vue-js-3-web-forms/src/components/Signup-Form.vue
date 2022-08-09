@@ -14,7 +14,10 @@
     </select>
 
     <label>Skills:</label>
-    <input type="text" v-model="tempSkill" @keyup="addSkill"> <!-- keyup means 'whenever a key is pressed' -->
+    <input type="text" v-model="tempSkill" @keyup.alt="addSkill"> 
+    <!-- keyup means 'whenever a key is pressed' -->
+    <!-- .alt means that when holding down the alt the other key is not recorded in the text,
+         hence now ALT + , saves the skill WITHOUT a comma being saved -->
     <div v-for="thisSkill in skills" v-bind:key="thisSkill" class="pill"> <!-- loop through skills requires key/unique field -->
       {{ thisSkill }}
     </div>

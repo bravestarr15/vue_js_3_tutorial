@@ -62,6 +62,10 @@ export default {
   methods: {
     addSkill(e) {
       console.log(e)
+      if (e.key === ',' && this.tempSkill) {  /* and tempSkill is not empty */
+        this.skills.push(this.tempSkill)
+        this.tempSkill = ''
+      }
     }
   }
 }

@@ -2,7 +2,8 @@
 
   <div> 
 
-    <form>
+    <form @submit.prevent="handleSubmit">  
+    <!-- event modifier 'prevent' stops default action of clear form and page refresh -->
       <label>Email:</label>
       <input type="email" required v-model="email"> 
 
@@ -20,7 +21,8 @@
       <!-- keyup means 'whenever a key is pressed' -->
       <!-- .alt means that when holding down the alt the other key is not recorded in the text,
           hence now ALT + , saves the skill WITHOUT a comma being saved -->
-      <div v-for="thisSkill in skills" v-bind:key="thisSkill" class="pill"> <!-- loop through skills requires key/unique field -->
+      <div v-for="thisSkill in skills" v-bind:key="thisSkill" class="pill"> 
+      <!-- loop through skills requires key/unique field -->
         <span @click="deleteSkill(thisSkill)">{{ thisSkill }}</span>
       </div>
 
@@ -95,6 +97,10 @@ export default {
         return thatSkill !== item
       })
 */
+    },
+    handleSubmit() {
+      console.log('form submitted')
+      /* normally, here, you'd validate the entered info and submit to database */
     }
   }
 }

@@ -21,8 +21,12 @@
 export default {
   methods: {
     goRedirect() {},
-    goBack() {},
-    goForward() {}
+    goBack() {
+      this.$router.go(-1)  /* note: router, NOT route */
+    },
+    goForward() {
+      this.$router.go(1)
+    }
   },
 }
 </script>

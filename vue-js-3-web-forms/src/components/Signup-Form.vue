@@ -66,7 +66,11 @@ export default {
     addSkill(e) {
 /*      console.log(e)  */
       if (e.key === ',' && this.tempSkill) {  /* and tempSkill is not empty */
-        this.skills.push(this.tempSkill)
+        /* check for existence of latest skill (tempSkill) in array 
+           note: ! negates the check */
+        if (!this.skills.includes(this.tempSkill)) {
+          this.skills.push(this.tempSkill)
+        }
         this.tempSkill = ''
       }
     }

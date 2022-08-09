@@ -3,19 +3,15 @@
   <div>
 
     <h1>Job Details Page</h1>
-    <p>The job id is {{ id }}</p>
+    <p>The job id is {{ job_id }}</p>
   
   </div>
-  
+
 </template>
 
 <script>
 export default {
-  data() {
-    return {
-      id: this.$route.params.job_id
-    }
-  }
+  props: [ 'job_id' ]
 }
 </script>
 

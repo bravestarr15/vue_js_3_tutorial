@@ -1,11 +1,17 @@
 <template>
 
-  <div>
+  <div v-if="thisJobData">
+  <!-- i.e. only show the details once the data is returned and populates thisJobData -->
 
     <h1>{{ thisJobData.title }}</h1>
     <p>The job id is {{ job_id }}</p>
     <p>{{ thisJobData.details }}</p>
   
+  </div>
+  <div v-else>
+
+    <p>Loading job details...</p>>
+
   </div>
 
 </template>

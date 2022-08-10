@@ -1,5 +1,5 @@
 <template>
-  <dir>
+  <div>
 
     <nav>
       <!--  bind to names defined in router/index.js  -->
@@ -14,7 +14,7 @@
 
     <router-view />
   
-  </dir>
+  </div>
 </template>
 
 <script>

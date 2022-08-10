@@ -26,7 +26,6 @@ export default {
       .then(data => this.jobs = data)
       .catch(err => console.log(err.message))
   }
-
 }
 </script>
 

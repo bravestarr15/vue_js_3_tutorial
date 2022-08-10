@@ -2,8 +2,9 @@
 
   <div>
 
-    <h1>Job Details Page</h1>
+    <h1>{{ thisJobData.title }}</h1>
     <p>The job id is {{ job_id }}</p>
+    <p>{{ thisJobData.details }}</p>
   
   </div>
 
@@ -11,7 +12,18 @@
 
 <script>
 export default {
-  props: [ 'job_id' ]
+  props: [ 'job_id' ],
+  data() {
+    return {
+      thisJobData: null
+    }
+  },
+  mounted() {
+    fetch('http://localhost:3000/jobs/' + this.job_id)
+      .then(response => response.json())
+      .then(data => this.thisJobData = data)
+      .catch(err => console.log(err.message))
+  }
 }
 </script>
 

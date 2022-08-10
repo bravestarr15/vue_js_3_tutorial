@@ -4,10 +4,19 @@
 
     <h1>Jobs</h1>  
 
-    <div v-for="eachJob in jobs" v-bind:key="eachJob.id" class="job">
-      <router-link v-bind:to="{ name: 'jobDetails', params: { job_id: eachJob.id }}">
-        <h2>{{ eachJob.title }}</h2>
-      </router-link>
+    <div v-if="jobs.length">
+
+      <div v-for="eachJob in jobs" v-bind:key="eachJob.id" class="job">
+        <router-link v-bind:to="{ name: 'jobDetails', params: { job_id: eachJob.id }}">
+          <h2>{{ eachJob.title }}</h2>
+        </router-link>
+      </div>
+
+    </div>
+    <div v-else>
+
+      <p>Loading jobs...</p>
+
     </div>
 
   </div>

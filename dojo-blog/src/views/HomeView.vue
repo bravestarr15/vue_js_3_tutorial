@@ -1,7 +1,8 @@
 <template>
   <div class="home">
     <p ref="p">My name is {{ name }} and my age is {{ age }}</p>
-    <button @click="handleClick">click me</button>
+    <div><button @click="handleClick">click me</button></div>
+    <div><input type="text" v-model="name"></div>
   </div>
 </template>
 

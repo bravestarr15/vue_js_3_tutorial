@@ -1,9 +1,9 @@
 <template>
   <div class="home">
-    <p ref="p">My name is {{ name }} and my age is {{ age }}</p>
-    <div><button @click="handleClick">click me</button></div>
-    <div><button @click="age++">add one to age</button></div>
-    <div><input type="text" v-model="name"></div>
+    <h1>Home</h1>
+    <h2>Refs</h2>
+    <p>My name is {{ ninjaOne.name }} and my age is {{ ninjaOne.age }}</p>
+    <button @click="updateNinjaOne">Update Ninja One</button>
   </div>
 </template>
 
@@ -14,25 +14,13 @@ export default {
   name: 'HomeView',
   /* setup fires first, before anything else */
   setup() {
+    const ninjaOne = ref( { name: 'mario', age: 30 } )
 
-    const p = ref(null)
-    /* you can't reference p here, since it hasn't been returned to the dom yet */
-
-    /* note: these variables are not yet reactive; if their values update the paragraph in the template will not update  */
-/*
-    let name = 'mario'
-    let age = 30
-*/
-    /* make them reactive by using refs */
-    const name = ref('mario')
-    const age = ref(30)
-
-    const handleClick = () => {
-      name.value = 'luigi'
-      age.value = 35
+    const updateNinjaOne = () => {
+      ninjaOne.value.age = 40
     }
 
-    return { name, age, handleClick, p }
+    return { ninjaOne, updateNinjaOne }
   }
 }
 </script>

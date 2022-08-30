@@ -12,6 +12,7 @@ export default {
   setup() {
     console.log("setup")
 
+    /* note: these variables are not yet reactive; if their values update the paragraph in the template will not update  */
     let name = 'mario'
     let age = 30
 

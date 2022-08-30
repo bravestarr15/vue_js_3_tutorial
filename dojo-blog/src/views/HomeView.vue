@@ -11,10 +11,10 @@ export default {
   setup() {
     console.log("setup")
 
-    let setup_name = 'mario'
-    let setup_age = 30
+    let name = 'mario'
+    let age = 30
 
-    return { name: setup_name, age : setup_age }
+    return { name, age }
   }
 }
 </script>

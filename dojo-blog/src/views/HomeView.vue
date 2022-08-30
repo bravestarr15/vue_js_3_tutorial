@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <p>My name is {{ name }} and my age is {{ age }}</p>
+    <p ref="p">My name is {{ name }} and my age is {{ age }}</p>
     <button @click="handleClick">click me</button>
   </div>
 </template>
@@ -24,10 +24,11 @@ export default {
     let age = 30
 
     const handleClick = () => {
-      console.log('you clicked me')
+      console.log(p)
+      console.log(p.value)
     }
 
-    return { name, age, handleClick }
+    return { name, age, handleClick, p }
   }
 }
 </script>

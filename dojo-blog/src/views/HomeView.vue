@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-
+    <p>My name is {{ name }} and my age is {{ age }}</p>
   </div>
 </template>
 
@@ -8,15 +8,13 @@
 export default {
   name: 'HomeView',
   /* setup fires first, before anything else */
-  /* check console !! */
   setup() {
     console.log("setup")
-  },  
-  created() {
-    console.log("created")
-  },
-  mounted() {
-    console.log("mounted")
+
+    let setup_name = 'mario'
+    let setup_age = 30
+
+    return { name: setup_name, age : setup_age }
   }
 }
 </script>

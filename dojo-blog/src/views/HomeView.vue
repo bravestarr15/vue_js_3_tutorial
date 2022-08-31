@@ -2,7 +2,8 @@
   <div class="home">
     <h1>Home</h1>
     <input type="text" v-model="search">
-    <div v-for="name in names" v-bind:key="name">{{ name }}</div>
+    <p>search term: {{ search }}</p>
+    <div v-for="name in matchingNames" v-bind:key="name">{{ name }}</div>
   </div>
 </template>
 
@@ -16,7 +17,11 @@ export default {
     const search = ref('')
     const names = ref(['mario', 'yoshi', 'luigi', 'toad', 'bowser', 'koopa', 'peach'])
 
-    return { names, search }
+    const matchingNames = computed(() => {
+      return names.value.filter((name) => name.includes(search.value))
+    })
+
+    return { names, search, matchingNames }
   }
 }
 </script>

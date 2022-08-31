@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import { ref, reactive, computed, watch } from 'vue'
+import { ref, reactive, computed, watch, watchEffect } from 'vue'
 
 export default {
   name: 'HomeView',
@@ -19,6 +19,10 @@ export default {
 
     watch(search, () => {
       console.log('watch function ran')
+    })
+
+    watchEffect(() => {
+      console.log('watchEffect function ran', search.value)
     })
 
     const matchingNames = computed(() => {

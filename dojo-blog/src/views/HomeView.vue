@@ -14,7 +14,8 @@ export default {
   components: { PostList },
   setup() {
     const posts = ref([])
-    
+    const error = ref(null)
+
     return { posts }
   }
 }

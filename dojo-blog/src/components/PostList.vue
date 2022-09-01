@@ -8,15 +8,17 @@
 </template>
 
 <script>
-
+import { onMounted } from 'vue'
 import SinglePost from './SinglePost.vue'
 
 export default {
   props: ['posts'],
   components: { SinglePost },
   setup(props) {
-    console.log(props)
-    console.log(props.posts)
+    onMounted(() => console.log('component mounted in setup function'))
+  },
+  mounted() {
+    console.log('component mounted outside setup function')
   }
 }
 

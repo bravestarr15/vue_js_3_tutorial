@@ -18,7 +18,7 @@ export default {
 
     const load = async() => {
       try {
-        let data = await fetch('http://localhost:3000/post')
+        let data = await fetch('http://localhost:3000/posts')
         console.log(data)
         if (!data.ok) {
           throw Error('no data available') /* which triggers the catch(err) */

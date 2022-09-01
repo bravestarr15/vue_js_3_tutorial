@@ -19,7 +19,7 @@ export default {
     onUpdated(() => console.log('component updated in setup function'))
   },
   mounted() {
-    console.log('component mounted outside setup function')
+    console.log('component mounted outside setup function via options api')
   }
 }
 

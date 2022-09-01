@@ -23,6 +23,7 @@ export default {
         if (!data.ok) {
           throw Error('no data available') /* which triggers the catch(err) */
         }
+        posts.value = await data.json()
       }
       catch (err) {
         error.value = err.message /* which posts the erorr message to the constant */

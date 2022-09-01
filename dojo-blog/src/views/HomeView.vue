@@ -1,6 +1,7 @@
 <template>
   <div class="home">
     <h1>Home</h1>
+    <div v-if="error">{{ error }}</div>
     <PostList v-bind:posts="posts" />
   </div>
 </template>
@@ -33,7 +34,7 @@ export default {
 
     load()
 
-    return { posts }
+    return { posts, error }
   }
 }
 </script>

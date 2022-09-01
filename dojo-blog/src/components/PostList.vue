@@ -8,7 +8,11 @@
 
 <script>
 export default {
-  props: ['posts']
+  props: ['posts'],
+  setup(props) {
+    console.log(props)
+    console.log(props.posts)
+  }
 }
 </script>
 

@@ -2,7 +2,10 @@
   <div class="home">
     <h1>Home</h1>
     <div v-if="error">{{ error }}</div>
-    <PostList v-bind:posts="posts" />
+    <div v-if="posts.length">
+      <PostList v-bind:posts="posts" />
+    </div>
+    <div v-else>Loading...</div>
   </div>
 </template>
 

@@ -1,10 +1,15 @@
 <template>
-  details
+  <div>
+    details
+  </div>
 </template>
 
 <script>
 export default {
+  props: ['id'], 
+  setup(props) {
 
+  }
 }
 </script>
 
